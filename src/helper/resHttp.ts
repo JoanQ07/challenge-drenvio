@@ -1,4 +1,3 @@
-import { Response } from "express";
 import { IErrorHttp } from "./errorHttp";
 
 interface resHttps extends IErrorHttp {}

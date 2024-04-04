@@ -1,19 +1,18 @@
 import { errorHttp, resHttp } from "../../helper";
-import { servicesProduct } from "./services";
 import { Response, Request } from "express";
+import { servicesUser } from "./services";
 
 const createUser = async ({ body }: Request, res: Response) => {
   try {
-    const data = await servicesProduct.createProduct(body);
+    const data = await servicesUser.createUser(body);
 
     return resHttp({
       res,
       data,
-      message: `Producto registrado ${body.name} exitosamente`,
+      message: `Usuario ${body.name}, registrad@ exitosamente`,
     });
   } catch (error: any) {
     errorHttp({ res, data: error });
   }
 };
-
-export const ctrlProduct = { createUser };
+export const ctrlUser = { createUser };

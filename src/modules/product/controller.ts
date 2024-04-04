@@ -16,4 +16,18 @@ const createProduct = async ({ body }: Request, res: Response) => {
   }
 };
 
-export const ctrlProduct = { createProduct };
+const searchProductByStock = async ({ body }: Request, res: Response) => {
+  try {
+    const data = await servicesProduct.searchProductByStock();
+    const message = data.length > 0 ? `${data.length} productos capturados` : "Sin productos con stock"
+    return resHttp({
+      res,
+      data,
+      message,
+    });
+  } catch (error: any) {
+    errorHttp({ res, data: error });
+  }
+};
+
+export const ctrlProduct = { createProduct, searchProductByStock };

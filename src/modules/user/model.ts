@@ -1,7 +1,7 @@
-import { ObjectId, Schema, model } from "mongoose";
+import mongoose, { Decimal128, Schema, model } from "mongoose";
 
 export interface IUser {
-  id: ObjectId;
+  id: mongoose.Schema.Types.ObjectId;
   name: string;
   createdAt: string;
   updatedAt: string;
@@ -9,7 +9,7 @@ export interface IUser {
 
 const users = new Schema<IUser>(
   {
-    id: Object,
+    id: { type: mongoose.Schema.Types.ObjectId },
     name: String,
   },
   {

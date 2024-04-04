@@ -1,9 +1,9 @@
-import { IBrand } from "./model";
 import dataContext from "../../helper/dataContext";
+import { IBrand } from "./model";
 
 const createBrand = async (data: IBrand) => {
   try {
-    const newBrand = await dataContext.productModel.create(data);
+    const newBrand = await dataContext.brandModel.create(data);
     return newBrand;
   } catch (error) {
     throw error;

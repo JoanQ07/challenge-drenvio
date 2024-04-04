@@ -1,7 +1,6 @@
-import { ObjectId, Schema, model } from "mongoose";
-
+import mongoose, { Schema, model } from "mongoose";
 export interface IBrand {
-  id: ObjectId;
+  id: mongoose.Schema.Types.ObjectId;
   name: string;
   createdAt: string;
   updatedAt: string;
@@ -9,7 +8,7 @@ export interface IBrand {
 
 const brands = new Schema<IBrand>(
   {
-    id: Object,
+    id: { type: mongoose.Schema.Types.ObjectId },
     name: String,
   },
   {
@@ -18,4 +17,4 @@ const brands = new Schema<IBrand>(
   }
 );
 
-export const brandtModel = model<IBrand>("brands", brands);
+export const brandModel = model<IBrand>("brands", brands);

@@ -1,20 +1,22 @@
-import { ObjectId, Schema, model } from "mongoose";
+import mongoose, { Decimal128, ObjectId, Schema, model } from "mongoose";
 
 export interface IProdcut {
-  id: ObjectId;
+  id: mongoose.Schema.Types.ObjectId;
   name: string;
   price: number;
-  idBrand: ObjectId;
+  stock: number;
+  idBrand: mongoose.Schema.Types.ObjectId;
   createdAt: string;
   updatedAt: string;
 }
 
 const products = new Schema<IProdcut>(
   {
-    id: Object,
+    id: { type: mongoose.Schema.Types.ObjectId },
     name: String,
+    stock: Number,
     price: Number,
-    idBrand: Object,
+    idBrand: { type: mongoose.Schema.Types.ObjectId, required: true },
   },
   {
     timestamps: true,

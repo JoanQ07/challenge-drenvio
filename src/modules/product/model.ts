@@ -16,7 +16,7 @@ const products = new Schema<IProdcut>(
     name: String,
     stock: Number,
     price: Number,
-    idBrand: { type: mongoose.Schema.Types.ObjectId, required: true },
+    idBrand: { type: mongoose.Schema.Types.ObjectId, ref: "brands", required: true },
   },
   {
     timestamps: true,

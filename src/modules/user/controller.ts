@@ -12,7 +12,7 @@ const createUser = async ({ body }: Request, res: Response) => {
       message: `Usuario ${body.name}, registrad@ exitosamente`,
     });
   } catch (error: any) {
-    errorHttp({ res, data: error });
+    errorHttp({ res, message: error });
   }
 };
 export const ctrlUser = { createUser };

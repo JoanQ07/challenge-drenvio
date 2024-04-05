@@ -12,7 +12,7 @@ const createBrand = async ({ body }: Request, res: Response) => {
       message: `Marca ${body.name} registrada exitosamente`,
     });
   } catch (error: any) {
-    errorHttp({ res, data: error });
+    errorHttp({ res, message: error });
   }
 };
 
